@@ -4,29 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace الاعداد_الاولية
+namespace الأعداد_المثالية
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("enter start and end");
-            int NUM1 = int.Parse(Console.ReadLine());
-            int NUM2 = int.Parse(Console.ReadLine());
-            int sum = 0;
-            for (int i = NUM1; i <= NUM2; i++)
+
+            Console.WriteLine("Hello");
+            Console.WriteLine("Please enter NUM1 and NUM2");
+            long NUM1 = long.Parse(Console.ReadLine());
+            long NUM2 = long.Parse(Console.ReadLine());
+            long SUM = 0;
+            for (long i = NUM1; i <= NUM2; i++)
             {
-                for (int x = 1; x <= i; x++)
+                for (long x = 1; x < i; x++)
                 {
                     if (i % x == 0)
-                        sum++;
+                        SUM += x;
                 }
-                if (sum == 2)
-                {
+                if (SUM == i)
                     Console.WriteLine(i);
-                }
-                sum = 0;
+                SUM = 0;
             }
+            Console.ReadKey();
+
         }
     }
 }
